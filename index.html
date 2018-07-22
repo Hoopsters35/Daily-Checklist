@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Daily Reminders</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Daily Checklist</title>
@@ -10,17 +11,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-    <div id="top-buttons">
+    <div id="top-buttons" class="header">
         <button id="add-task" class="btn">Add task</button>
 
     </div> 
     <div id="task-maker" class="hidden">
-        <div class="btn-holder">
-            <button class="btn" vlaue="Set title"></button>
-        </div>
+        <form>
+            <button type="submit">Save note</button>
+            <span id="make-title">
+                <textarea placeholder="Title"></textarea>
+                <button type="submit">Set title</button>
+            </span>
+            <span id="make-description">
+                <textarea id="make-description" placeholder="Description"></textarea>
+                <button type="submit">Set description</button>
+            </span>
+        </form>
     </div>
-    <div id="tasks">
+    <div class="main-content">
+        <ul id="tasks">
 
+        </ul>
     </div>
 </body>
 </html>
