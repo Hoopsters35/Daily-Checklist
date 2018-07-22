@@ -1,13 +1,15 @@
+/* jshint esversion: 6*/
+
 app = {};
 
 app.init = function() {
-    $('button #add-task').click(() => {
+    $('#add-task').click(() => {
         app.newTask();
     });
 };
 
 app.newTask = function() {
-    
+    $('#task-maker').addClass('displayed').removeClass('hidden');
 };
 
-$(app.init);
+$(document).ready(app.init);
