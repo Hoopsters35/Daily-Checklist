@@ -3,13 +3,19 @@
 app = {};
 
 app.init = function() {
-    $('#add-task').click(() => {
-        app.newTask();
-    });
+    document.getElementById('add-task').addEventListener('click', app.newTask);
 };
 
 app.newTask = function() {
-    $('#task-maker').addClass('displayed').removeClass('hidden');
+//    $('#task-maker').addClass('displayed').removeClass('hidden');
+    document.getElementById('task-maker').className = 'displayed';
+
+    document.querySelector('#task-maker > form > button.submit').addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Submit button clicked');
+    });
+
+    document.getElementById('task-maker').className = 'hidden';
 };
 
-$(document).ready(app.init);
+document.addEventListener("DOMContentLoaded", app.init);
