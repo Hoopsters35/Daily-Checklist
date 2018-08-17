@@ -4,3 +4,10 @@
 .displayed {
     display: block
 }
+#top-buttons {
+    background-color: "Gray"
+}
+
+#main-content {
+    background-color: "Yellow"
+}
