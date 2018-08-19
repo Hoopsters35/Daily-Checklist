@@ -6,7 +6,11 @@ api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return jsonify({"data": "Hello World"})
+        return {"data": "Hello World"}
+
+    def post(self):
+        some_json = request.get_json()
+        return f"You sent: {some_json}"
 
 api.add_resource(HelloWorld, '/')
 
