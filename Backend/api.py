@@ -43,9 +43,16 @@ class Notes(Resource):
 
         db.close()
         return {"status" : 200, "id" : id}
+    
+    def delete(self, id):
+        db = get_db()
+        assert id in db['ids'], "ID must be in database"
+        del db[id]
+        return {"status" : 200}
 
 
 api.add_resource(HelloWorld, '/HelloWorld')
+api.add_resource(Notes, '/Notes/<id>')
 
 if(__name__ == "__main__"):
     app.run(debug=True)
